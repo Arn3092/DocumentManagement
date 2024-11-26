@@ -200,7 +200,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
         await user.save();
 
         // Generate the reset URL to include in the email
-        const resetUrl = `https://aaghaz.co.in//auth/reset-password/${resetToken}`;
+        const resetUrl = `https://aaghaz.co.in/auth/reset-password/${resetToken}`;
         // console.log("reset Url: ", resetUrl)
 
         // Send the reset password link via email
