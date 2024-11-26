@@ -192,15 +192,15 @@ const forgotPassword = asyncHandler(async (req, res) => {
             throw new ApiError(404, "No account found with this email address");
         }
 
-        console.log("User from forgot password: ", user)
+        // console.log("User from forgot password: ", user)
 
         // Generate a reset token and save it to the user record
         const resetToken = user.generatePasswordResetToken(); 
-        console.log("Reset Token: ", resetToken)
+        // console.log("Reset Token: ", resetToken)
         await user.save();
 
         // Generate the reset URL to include in the email
-        const resetUrl = `https://rotaract-and-dms-club.onrender.com/auth/reset-password/${resetToken}`;
+        const resetUrl = `https://aaghaz.co.in//auth/reset-password/${resetToken}`;
         // console.log("reset Url: ", resetUrl)
 
         // Send the reset password link via email
