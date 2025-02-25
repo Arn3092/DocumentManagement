@@ -590,9 +590,9 @@ const createProjectReport = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: 'At least one chairperson must be selected.' });
   }
 
-  if(isJointProject){
-    if ([jointProjectPartner].some(field => !field || field.trim() === '')) {
-      throw new ApiError(400, "All required fields must be filled.");
+  if (isJointProject) {
+    if (!jointProjectPartner || jointProjectPartner.trim() === '') {
+        throw new ApiError(400, "All required fields must be filled.");
     }
   }
 
